@@ -17,14 +17,14 @@ By **Anna Doan**
 
 **3. What's the difference between navigation and snapshot mode?**
 > **Navigation mode** analyzes your web page as it loads from a URL, simulating the full page load experience from a user's perspective. It captures metrics like: performance, structure, cumulative layout shift, etc. In more specific words: First Contentful Paint (FCP), Largest Contentful Paint (LCP), and Total Blocking Time (TBT) are some metrics. 
-> On the other hand, **Snapshot mode** analyzes the page's current DOM state at a single point in time. It's better for identifying static accessibility or layout issues, but does not measure load performance. 
+> On the other hand, **Snapshot mode** analyzes the page's current DOM state at a single point in time. It's better for identifying static accessibility or layout issues.
 
 
 **4. Name three things we could do to impove the CSE 110 shop site based on the Lighthouse results?**
 > The three things we can improve on are:
 > - Compress and resize images to reduce load time. 
-> - add a `<meta name="viewport>` tag for responsive design on mobile devices. 
-> - Use <link rel="preconnect"> for `https://fakestoreapi.com` to reduce connection setup time and improve FCP and LCP by initiating early network connections.
+> - add a `<meta name="viewport>` tag for responsive design on mobile devices and prevent a 300 millisecond delay to user input.
+> - Adding `preconnect` or `dns-prefetch` resource hints to establish early connections important third-party orgins. More specifically, for `fakestoreapi.com` and `https://fakestoreapi.com`.
 
 ## Notes
 ### Expose: E2E Testing with Jest-Puppeteer
