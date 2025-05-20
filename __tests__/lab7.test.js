@@ -125,6 +125,10 @@ describe('Basic user flow for Website', () => {
      * Remember to remove the .skip from this it once you are finished writing this test.
      */
 
+    // Clear state before test to avoid interference from Step 2
+    await page.evaluate(() => localStorage.clear());
+    await page.reload({ waitUntil: ['networkidle0', 'domcontentloaded'] });
+
     const prodItems = await page.$$('product-item');
     for (const item of prodItems) {
       const shadowRoot = await item.getProperty('shadowRoot');
